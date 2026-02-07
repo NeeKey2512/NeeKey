@@ -74,7 +74,7 @@ body {
     height: 260px;
     background: #ffffff;
     position: relative;
-    transform: rotate(45deg);
+    transform: rotate(0deg);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -97,14 +97,14 @@ body {
 }
 
 .big-heart::after {
-    left: -130px;
+    left: 130px;
     top: 0;
 }
 
 /* TEXT FIX */
 .big-heart p {
     position: absolute;
-    transform: rotate(-45deg);
+    /*transform: rotate(-45deg);*/
     color: #e6004c;          /* Dark red */
     font-size: 26px;
     font-weight: bold;
