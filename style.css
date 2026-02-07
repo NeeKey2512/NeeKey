@@ -1,0 +1,113 @@
+/* Page setup */
+body {
+    margin: 0;
+    height: 100vh;
+    background: #ff4d6d;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Floating hearts background */
+.hearts span {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    transform: rotate(45deg);
+    animation: float 8s infinite ease-in;
+    opacity: 0.8;
+}
+
+.hearts span::before,
+.hearts span::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+}
+
+.hearts span::before {
+    top: -10px;
+    left: 0;
+}
+
+.hearts span::after {
+    left: -10px;
+    top: 0;
+}
+
+/* Random positions */
+.hearts span:nth-child(1) { left: 10%; animation-duration: 6s; }
+.hearts span:nth-child(2) { left: 20%; animation-duration: 8s; }
+.hearts span:nth-child(3) { left: 30%; animation-duration: 7s; }
+.hearts span:nth-child(4) { left: 40%; animation-duration: 9s; }
+.hearts span:nth-child(5) { left: 50%; animation-duration: 6s; }
+.hearts span:nth-child(6) { left: 60%; animation-duration: 8s; }
+.hearts span:nth-child(7) { left: 70%; animation-duration: 7s; }
+.hearts span:nth-child(8) { left: 80%; animation-duration: 9s; }
+.hearts span:nth-child(9) { left: 90%; animation-duration: 6s; }
+.hearts span:nth-child(10){ left: 95%; animation-duration: 8s; }
+
+@keyframes float {
+    0% {
+        bottom: -50px;
+        transform: rotate(45deg) scale(0.6);
+    }
+    100% {
+        bottom: 110%;
+        transform: rotate(45deg) scale(1);
+    }
+}
+
+/* Center heart container */
+.heart-container {
+    position: relative;
+    z-index: 2;
+}
+
+/* Big heart shape */
+.big-heart {
+    width: 220px;
+    height: 220px;
+    background: #fff;
+    position: relative;
+    transform: rotate(45deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.big-heart::before,
+.big-heart::after {
+    content: "";
+    width: 220px;
+    height: 220px;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.big-heart::before {
+    top: -110px;
+    left: 0;
+}
+
+.big-heart::after {
+    left: -110px;
+    top: 0;
+}
+
+/* Text inside heart */
+.big-heart p {
+    transform: rotate(-45deg);
+    text-align: center;
+    color: #ff4d6d;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 1.4;
+}
