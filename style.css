@@ -69,12 +69,10 @@ body {
     position: relative;
     z-index: 2;
 }
-
-/* Big heart shape */
 .big-heart {
-    width: 220px;
-    height: 220px;
-    background: #fff;
+    width: 260px;
+    height: 260px;
+    background: #ffffff;
     position: relative;
     transform: rotate(45deg);
     display: flex;
@@ -82,32 +80,36 @@ body {
     align-items: center;
 }
 
+/* Heart circles */
 .big-heart::before,
 .big-heart::after {
     content: "";
-    width: 220px;
-    height: 220px;
-    background: #fff;
+    width: 260px;
+    height: 260px;
+    background: #ffffff;
     border-radius: 50%;
     position: absolute;
 }
 
 .big-heart::before {
-    top: -110px;
+    top: -130px;
     left: 0;
 }
 
 .big-heart::after {
-    left: -110px;
+    left: -130px;
     top: 0;
 }
 
-/* Text inside heart */
+/* TEXT FIX */
 .big-heart p {
+    position: absolute;
     transform: rotate(-45deg);
-    text-align: center;
-    color: #e6004c;
-    font-size: 20px;
+    color: #e6004c;          /* Dark red */
+    font-size: 26px;
     font-weight: bold;
+    text-align: center;
+    z-index: 10;             /* VERY IMPORTANT */
+    margin: 0;
     line-height: 1.4;
 }
