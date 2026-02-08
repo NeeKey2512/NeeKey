@@ -1,115 +1,90 @@
-/* Page setup */
+
+/* COMMON */
 body {
-    margin: 0;
-    height: 100vh;
-    background: #ff4d6d;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    font-family: 'Arial', sans-serif;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  text-align: center;
+  color: white;
 }
 
-/* Floating hearts background */
-.hearts span {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    transform: rotate(45deg);
-    animation: float 8s infinite ease-in;
-    opacity: 0.8;
+/* PAGE 1 */
+.page1 {
+  background: red;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.hearts span::before,
-.hearts span::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background: white;
-    border-radius: 50%;
+.big-heart {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  background: white;
+  color: red;
+  width: 320px;
+  padding: 30px;
+  margin: auto;
+  border-radius: 50%;
 }
 
-.hearts span::before {
-    top: -10px;
-    left: 0;
+.big-heart p {
+  font-size: 14px;
+  font-weight: bold;
 }
 
-.hearts span::after {
-    left: -10px;
-    top: 0;
+.hint {
+  font-size: 12px;
+  margin-top: 10px;
 }
 
-/* Random positions */
-.hearts span:nth-child(1) { left: 10%; animation-duration: 6s; }
-.hearts span:nth-child(2) { left: 20%; animation-duration: 8s; }
-.hearts span:nth-child(3) { left: 30%; animation-duration: 7s; }
-.hearts span:nth-child(4) { left: 40%; animation-duration: 9s; }
-.hearts span:nth-child(5) { left: 50%; animation-duration: 6s; }
-.hearts span:nth-child(6) { left: 60%; animation-duration: 8s; }
-.hearts span:nth-child(7) { left: 70%; animation-duration: 7s; }
-.hearts span:nth-child(8) { left: 80%; animation-duration: 9s; }
-.hearts span:nth-child(9) { left: 90%; animation-duration: 6s; }
-.hearts span:nth-child(10){ left: 95%; animation-duration: 8s; }
+input {
+  width: 90%;
+  padding: 8px;
+  margin-top: 10px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 5px;
+  background: red;
+  color: white;
+  cursor: pointer;
+}
+
+/* Floating hearts */
+.hearts::before {
+  content: "🤍 🤍 🤍 🤍 🤍 🤍 🤍 🤍 🤍 🤍";
+  position: absolute;
+  width: 100%;
+  animation: float 10s linear infinite;
+}
 
 @keyframes float {
-    0% {
-        bottom: -50px;
-        transform: rotate(45deg) scale(0.6);
-    }
-    100% {
-        bottom: 110%;
-        transform: rotate(45deg) scale(1);
-    }
+  0% { top: 100%; }
+  100% { top: -10%; }
 }
 
-/* Center heart container */
-.heart-container {
-    position: relative;
-    z-index: 2;
-}
-.big-heart {
-    width: 260px;
-    height: 260px;
-    background: #ffffff;
-    position: relative;
-    transform: rotate(0deg);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* PAGE 2 */
+.page2 {
+  background: linear-gradient(to bottom, #ff4b5c, #ff758c);
+  height: 100vh;
 }
 
-/* Heart circles */
-.big-heart::before,
-.big-heart::after {
-    content: "";
-    width: 260px;
-    height: 260px;
-    background: #ffffff;
-    border-radius: 50%;
-    position: absolute;
+.card {
+  padding-top: 80px;
 }
 
-.big-heart::before {
-    top: -130px;
-    left: 0;
+.buttons button {
+  margin: 10px;
 }
 
-.big-heart::after {
-    left: 130px;
-    top: 0;
+/* PAGE 3 */
+.page3 {
+  background: black;
+  height: 100vh;
 }
 
-/* TEXT FIX */
-.big-heart p {
-    position: absolute;
-    /*transform: rotate(-45deg);*/
-    color: #e6004c;          /* Dark red */
-    font-size: 26px;
-    font-weight: bold;
-    text-align: center;
-    z-index: 10;             /* VERY IMPORTANT */
-    margin: 0;
-    line-height: 1.4;
+.final {
+  padding-top: 150px;
 }
