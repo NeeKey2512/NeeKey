@@ -10,37 +10,72 @@ body {
   background: red;
 }
 
-/* Big heart */
-.big-heart {
+/* ================= HEART SHAPE ================= */
+
+.heart-wrapper {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: white;
-  color: black;
-  width: 360px;
-  height: 360px;
-  border-radius: 50%;
-  padding: 35px;
+  width: 320px;
+  height: 300px;
   z-index: 2;
+}
+
+.heart-shape {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: white;
+  left: 60px;
+  top: 40px;
+  transform: rotate(-45deg);
   box-shadow: 0 0 40px rgba(255,255,255,0.8);
 }
 
-.big-heart p,
-.big-heart h1,
-.big-heart h2,
-.big-heart h3 {
+.heart-shape::before,
+.heart-shape::after {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background: white;
+  border-radius: 50%;
+}
+
+.heart-shape::before {
+  top: -100px;
+  left: 0;
+}
+
+.heart-shape::after {
+  left: 100px;
+  top: 0;
+}
+
+/* ================= HEART CONTENT ================= */
+
+.heart-content {
+  position: absolute;
+  top: 70px;
+  left: 20px;
+  width: 280px;
+  color: black;
   text-transform: capitalize;
+}
+
+.hint {
+  font-size: 13px;
 }
 
 input {
   width: 90%;
-  padding: 8px;
-  margin-top: 10px;
+  padding: 7px;
+  margin-top: 8px;
 }
 
 button {
-  padding: 8px 20px;
+  padding: 8px 18px;
   margin: 8px;
   background: red;
   color: white;
@@ -49,11 +84,8 @@ button {
   cursor: pointer;
 }
 
-.hint {
-  font-size: 13px;
-}
+/* ================= FLOATING BACKGROUND HEARTS ================= */
 
-/* Heart background */
 .heart-bg {
   position: fixed;
   top: 0;
@@ -72,7 +104,6 @@ button {
   animation: floatHearts linear infinite;
 }
 
-/* Different positions, sizes, speeds */
 .heart-bg span:nth-child(1) { left: 5%;  font-size: 16px; animation-duration: 8s; }
 .heart-bg span:nth-child(2) { left: 15%; font-size: 22px; animation-duration: 10s; }
 .heart-bg span:nth-child(3) { left: 25%; font-size: 18px; animation-duration: 9s; }
