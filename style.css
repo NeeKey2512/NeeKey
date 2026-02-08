@@ -1,39 +1,36 @@
-
-/* COMMON */
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: "Times New Roman", Times, serif;
   text-align: center;
-  color: white;
-}
-
-/* PAGE 1 */
-.page1 {
-  background: red;
-  height: 100vh;
   overflow: hidden;
 }
 
+.page {
+  height: 100vh;
+  background: red;
+}
+
+/* Big heart */
 .big-heart {
-  position: relative;
+  position: fixed;
   top: 50%;
-  transform: translateY(-50%);
+  left: 50%;
+  transform: translate(-50%, -50%);
   background: white;
-  color: red;
-  width: 320px;
-  padding: 30px;
-  margin: auto;
+  color: black;
+  width: 360px;
+  height: 360px;
   border-radius: 50%;
+  padding: 35px;
+  z-index: 2;
+  box-shadow: 0 0 40px rgba(255,255,255,0.8);
 }
 
-.big-heart p {
-  font-size: 14px;
-  font-weight: bold;
-}
-
-.hint {
-  font-size: 12px;
-  margin-top: 10px;
+.big-heart p,
+.big-heart h1,
+.big-heart h2,
+.big-heart h3 {
+  text-transform: capitalize;
 }
 
 input {
@@ -43,48 +40,52 @@ input {
 }
 
 button {
-  margin-top: 10px;
   padding: 8px 20px;
-  border: none;
-  border-radius: 5px;
+  margin: 8px;
   background: red;
   color: white;
+  border: none;
+  border-radius: 6px;
   cursor: pointer;
 }
 
-/* Floating hearts */
-.hearts::before {
-  content: "🤍 🤍 🤍 🤍 🤍 🤍 🤍 🤍 🤍 🤍";
-  position: absolute;
+.hint {
+  font-size: 13px;
+}
+
+/* Heart background */
+.heart-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
   width: 100%;
-  animation: float 10s linear infinite;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
 }
 
-@keyframes float {
-  0% { top: 100%; }
-  100% { top: -10%; }
+.heart-bg span {
+  position: absolute;
+  bottom: -50px;
+  color: white;
+  opacity: 0.7;
+  animation: floatHearts linear infinite;
 }
 
-/* PAGE 2 */
-.page2 {
-  background: linear-gradient(to bottom, #ff4b5c, #ff758c);
-  height: 100vh;
-}
+/* Different positions, sizes, speeds */
+.heart-bg span:nth-child(1) { left: 5%;  font-size: 16px; animation-duration: 8s; }
+.heart-bg span:nth-child(2) { left: 15%; font-size: 22px; animation-duration: 10s; }
+.heart-bg span:nth-child(3) { left: 25%; font-size: 18px; animation-duration: 9s; }
+.heart-bg span:nth-child(4) { left: 35%; font-size: 26px; animation-duration: 11s; }
+.heart-bg span:nth-child(5) { left: 45%; font-size: 20px; animation-duration: 8s; }
+.heart-bg span:nth-child(6) { left: 55%; font-size: 24px; animation-duration: 12s; }
+.heart-bg span:nth-child(7) { left: 65%; font-size: 18px; animation-duration: 9s; }
+.heart-bg span:nth-child(8) { left: 75%; font-size: 22px; animation-duration: 10s; }
+.heart-bg span:nth-child(9) { left: 85%; font-size: 16px; animation-duration: 8s; }
+.heart-bg span:nth-child(10){ left: 95%; font-size: 24px; animation-duration: 11s; }
 
-.card {
-  padding-top: 80px;
-}
-
-.buttons button {
-  margin: 10px;
-}
-
-/* PAGE 3 */
-.page3 {
-  background: black;
-  height: 100vh;
-}
-
-.final {
-  padding-top: 150px;
+@keyframes floatHearts {
+  0% { transform: translateY(0); opacity: 0; }
+  10% { opacity: 0.7; }
+  100% { transform: translateY(-120vh); opacity: 0; }
 }
