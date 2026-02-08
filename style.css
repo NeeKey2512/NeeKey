@@ -10,25 +10,25 @@ body {
   background: red;
 }
 
-/* ================= HEART SHAPE ================= */
-
+/* ===== HEART WRAPPER (BIGGER) ===== */
 .heart-wrapper {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 320px;
-  height: 300px;
+  width: 420px;
+  height: 380px;
   z-index: 2;
 }
 
+/* ===== HEART SHAPE (BIGGER) ===== */
 .heart-shape {
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
   background: white;
-  left: 60px;
-  top: 40px;
+  left: 70px;
+  top: 60px;
   transform: rotate(-45deg);
   box-shadow: 0 0 40px rgba(255,255,255,0.8);
 }
@@ -37,29 +37,28 @@ body {
 .heart-shape::after {
   content: "";
   position: absolute;
-  width: 200px;
-  height: 200px;
+  width: 280px;
+  height: 280px;
   background: white;
   border-radius: 50%;
 }
 
 .heart-shape::before {
-  top: -100px;
+  top: -140px;
   left: 0;
 }
 
 .heart-shape::after {
-  left: 100px;
+  left: 140px;
   top: 0;
 }
 
-/* ================= HEART CONTENT ================= */
-
+/* ===== HEART CONTENT ===== */
 .heart-content {
   position: absolute;
-  top: 70px;
-  left: 20px;
-  width: 280px;
+  top: 110px;
+  left: 30px;
+  width: 360px;
   color: black;
   text-transform: capitalize;
 }
@@ -84,8 +83,7 @@ button {
   cursor: pointer;
 }
 
-/* ================= FLOATING BACKGROUND HEARTS ================= */
-
+/* ===== FLOATING BACKGROUND HEARTS ===== */
 .heart-bg {
   position: fixed;
   top: 0;
